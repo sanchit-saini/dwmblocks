@@ -1,21 +1,28 @@
 diff --git a/blocks.def.h b/blocks.def.h
-index 9c22d68..08a8b09 100644
+index 9c22d68..045e5da 100644
 --- a/blocks.def.h
 +++ b/blocks.def.h
-@@ -1,9 +1,13 @@
+@@ -1,11 +1,18 @@
  //Modify this file to change what commands output to your statusbar, and recompile using the make command.
  static const Block blocks[] = {
  	/*Icon*/	/*Command*/		/*Update Interval*/	/*Update Signal*/
 -	{"Mem:", "free -h | awk '/^Mem/ { print $3\"/\"$2 }' | sed s/i//g",	30,		0},
 -
 -	{"", "date '+%b %d (%a) %I:%M%p'",					5,		0},
-+	{"", "bandwidth",							60,		0},
-+	{"", "iface",								60,		0},
-+	{"", "battery", 							60,		0},
-+	{"", "volume", 								60,		0},
-+	{"", "disk",								60,		0},
-+	{"", "memory",								30,		0},
-+	{"", "date '+%b %d (%a) %I:%M%p'",					60,		0},
++	{"",   "dwm-netspeed",				3,		0},
++//	{"",   "dwm-iface",						1,		0},
++	{"",   "dwm-battery", 				5,		0},
++	{"",   "dwm-brightness",			1,		0},
++	{"",   "dwm-volume", 					1,		0},
++//	{"",   "dwm-cpu",						  5,		0},
++ {"",   "dwm-temp",            5,    0},
++	{"",   "dwm-memory",	        5,		0},
++ {"",   "dwm-disk",						5,		0},
++	{"",   "dwm-date",            60,		0},
  };
  
  //sets delimeter between status commands. NULL character ('\0') means no delimeter.
+-static char delim[] = " | ";
+-static unsigned int delimLen = 5;
++static char delim[] = " ";
++static unsigned int delimLen = 1;

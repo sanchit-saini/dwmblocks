@@ -1,4 +1,4 @@
-if [ ! -d "st" ]; then
+if [ ! -d "dwmblocks" ]; then
     git clone https://github.com/torrinfail/dwmblocks
     cd dwmblocks
 else
